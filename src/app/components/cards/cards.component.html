@@ -11,7 +11,7 @@
         @for (type of pokemon.status.types; track $index) {
         <button>{{ type.type.name }}</button>
         }
-        <button><a [routerLink]="['details', pokemon.status.id]" class="pokemon">Saiba Mais</a></button>
+        <button><a [routerLink]="['/details', pokemon.status.id]" class="pokemon">Saiba Mais</a></button>
       </article>
    }
   } @empty {
