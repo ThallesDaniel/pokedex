@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .card-grid {
   display: grid;
@@ -10,43 +10,134 @@
 }
 
 .card {
-  background-color: white;
-  border-radius: 10px;
-  height: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-
-  h3 {
-      margin-bottom: 10px;
-  }
-  img{
-    width: 100px;
-    height: 100px;
-  }
-  p {
-      color: #666;
-  }
-  &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  button {
-    padding: 10px 20px;
-    background-color: #626262;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    margin-bottom: 10px;
-    a {
-      all: unset;
-    }
-  }
+  width: 230px;
+  border-radius: 20px;
+  background: #1b233d;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .top-section {
+  height: 150px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+  position: relative;
+}
+
+.card .top-section .border {
+  border-bottom-right-radius: 10px;
+  height: 30px;
+  width: 130px;
+  background: white;
+  background: #1b233d;
+  position: relative;
+  transform: skew(-40deg);
+  box-shadow: -10px -10px 0 0 #1b233d;
+}
+
+.card .top-section .border::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: -15px;
+  background: rgba(255, 255, 255, 0);
+  border-top-left-radius: 10px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+}
+
+.card .top-section::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  height: 15px;
+  width: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+}
+
+.card .top-section .icons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .top-section .icons .logo {
+  height: 100%;
+  aspect-ratio: 1;
+  padding: 7px 0 7px 15px;
+}
+
+.card .top-section .icons .logo .top-section {
+  height: 100%;
+}
+
+
+.card .bottom-section {
+  margin-top: 15px;
+  padding: 10px 5px;
+}
+
+.card .bottom-section .title {
+  display: block;
+  font-size: 17px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.card .bottom-section .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card .bottom-section .row .item {
+  flex: 30%;
+  text-align: center;
+  padding: 5px;
+  color: rgba(170, 222, 243, 0.721);
+}
+
+.card .bottom-section .row .item .big-text {
+  font-size: 12px;
+  display: block;
+}
+
+.card .bottom-section .row .item .regular-text {
+  font-size: 9px;
+}
+
+.card .bottom-section .row .item:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.126);
+  border-right: 1px solid rgba(255, 255, 255, 0.126);
+}
+.title{
+  cursor: pointer;
+}
+a {
+  all: unset;
+}
+.img{
+  width: 100px;
+  height: 100px;
+  transform: translateX(55%);
+}
 .erro{
   background-color: #141313;
   padding: 20px;
