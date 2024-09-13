@@ -147,3 +147,11 @@ a {
 .img_erro{
   width: 80%;
 }
+@media screen and (max-width: 768px) {
+  .card {
+width: 450px;
+  }
+  .img{
+    transform: translateX(155%);
+  }
+}
