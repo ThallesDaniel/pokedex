@@ -2,17 +2,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { PokeApiService } from '../../service/poke-api.service';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [HttpClientModule, RouterModule],
+  imports: [HttpClientModule, RouterModule, NavbarComponent],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss'
 })
 export class CardsComponent implements OnInit {
-  type:string = "Eletric";
-  name:string = "picachu";
+
   private setAllPokemons: any;
   public getAllPokemons: any;
 
@@ -35,10 +35,12 @@ export class CardsComponent implements OnInit {
   }
 
   public getSearch(value: string){
-    const filter = this.setAllPokemons.filter( (res: any ) => {
-      return !res.name.indexOf(value.toLowerCase());
+    const filter = this.setAllPokemons.filter( (res: any) => {
+      const pokemonId = res.url.split('/')[res.url.split('/').length - 2];
+      return res.name.toLowerCase().includes(value.toLowerCase()) || pokemonId === value;
     });
 
     this.getAllPokemons = filter;
   }
+
 }

@@ -1,3 +1,4 @@
+<app-navbar (emmitSearch)="getSearch($event)"></app-navbar>
 <section class="card-grid">
   @for (pokemon of getAllPokemons; track $index) {
     @if ("pokemon.status") {
@@ -14,8 +15,8 @@
       </article>
    }
   } @empty {
-    <section>
-      <img
+    <section class="erro">
+      <img class="img_erro"
         src="https://github.com/troquatte/curso-angular-pokedex/blob/main/src/assets/error.png?raw=true"
         alt=""
       />

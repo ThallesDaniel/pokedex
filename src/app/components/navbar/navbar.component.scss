@@ -14,17 +14,9 @@ input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  flex-grow: 1;
+  width: 250px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #626262;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 @media screen and (max-width: 768px) {
 h1{
