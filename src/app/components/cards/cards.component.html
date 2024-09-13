@@ -1,0 +1,24 @@
+<section class="card-grid">
+  @for (pokemon of getAllPokemons; track $index) {
+    @if ("pokemon.status") {
+      <article class="card">
+        <img
+          [src]="pokemon.status.sprites.other.dream_world.front_default"
+          [alt]="pokemon.name"
+        />
+        <h3>{{ pokemon.name }}</h3>
+        @for (type of pokemon.status.types; track $index) {
+        <button>{{ type.type.name }}</button>
+        }
+        <button><a [routerLink]="['details', pokemon.status.id]" class="pokemon">Saiba Mais</a></button>
+      </article>
+   }
+  } @empty {
+    <section>
+      <img
+        src="https://github.com/troquatte/curso-angular-pokedex/blob/main/src/assets/error.png?raw=true"
+        alt=""
+      />
+    </section>
+  }
+</section>

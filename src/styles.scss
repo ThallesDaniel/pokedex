@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #856ee2;
+  border-radius: 14px;
+}
+html, body { height: 100%; width: 100%; }
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("assets/img/614955.png");
+  background-size:100%;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+      background: url("assets/img/BG_MOBILE.jpg");
+      background-size: contain;
+      background-size:100%;
+      background-position: center;
+  }
+}
