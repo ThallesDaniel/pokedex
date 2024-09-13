@@ -1,3 +1,5 @@
+@import './config-scss/rem-calc.scss';
+@import './config-scss/animation.scss';
 *,
 *::before,
 *::after {
@@ -25,7 +27,12 @@ body{
   background-size:100%;
   background-position: center;
 }
-
+main {
+	max-width: rem-calc(600);
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin: 0 auto;
+}
 @media screen and (max-width: 768px) {
   body {
       background: url("assets/img/BG_MOBILE.jpg");
